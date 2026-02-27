@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import logo from "@/assets/output-onlinepngtools.png";
+import logo from "@/assets/blackmarkubes-improve.png";
 import { useLanguage } from "../language-context";
 import { getTranslations } from "../i18n";
 import { LanguageToggle } from "./LanguageToggle";
