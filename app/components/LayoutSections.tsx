@@ -255,110 +255,40 @@ export function ContactWaitlistSection() {
       id="contact"
       className="mx-auto max-w-6xl px-4 pb-20 md:px-8"
     >
-      <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr]">
-        <div className="space-y-4">
-          <h2 className="text-lg font-medium text-white">
-            {t.forms.contactTitle}
-          </h2>
-          <p className="text-sm text-zinc-300">{t.forms.contactSubtitle}</p>
-          <form className="space-y-4">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label={t.forms.name} name="name" />
-              <Field label={t.forms.email} name="email" type="email" />
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label={t.forms.company} name="company" />
-              <Field label={t.forms.role} name="role" />
-            </div>
-            <FieldTextarea label={t.forms.message} name="message" />
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-medium text-black shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-zinc-100"
-            >
-              {t.forms.submitContact}
-            </button>
-            <p className="mt-2 text-xs text-zinc-500">
-              This form is a preview. We will wire it to your preferred backend
-              or CRM when ready.
-            </p>
-          </form>
+      <div className="space-y-6 rounded-3xl border border-white/8 bg-zinc-900/70 p-6 md:p-8">
+        <h2 className="text-lg font-medium text-white">
+          {lang === "en" ? "Stay close to Markubes" : "Mantente cerca de Markubes"}
+        </h2>
+        <p className="max-w-2xl text-sm text-zinc-300">
+          {lang === "en"
+            ? "Follow our journey and product updates through our community channels. A private waiting list is coming soon for teams that want to be first in line."
+            : "Sigue nuestro camino y las novedades del producto a través de nuestros canales. Muy pronto abriremos una waiting list privada para los equipos que quieran estar primeros en la fila."}
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://www.linkedin.com/company/markuves/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-medium text-black shadow-lg shadow-sky-500/20 transition hover:-translate-y-0.5 hover:bg-zinc-100"
+          >
+            {t.footer.linkedin}
+          </a>
+          <a
+            href="https://github.com/Markuves"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-sm font-medium text-zinc-100 backdrop-blur transition hover:border-white/40 hover:bg-white/10"
+          >
+            {t.footer.github}
+          </a>
         </div>
-        <div
-          id="waitlist"
-          className="rounded-3xl border border-white/8 bg-zinc-900/70 p-6"
-        >
-          <h3 className="text-sm font-medium text-white">
-            {t.forms.waitlistTitle}
-          </h3>
-          <p className="mt-2 text-xs text-zinc-300">
-            {t.forms.waitlistSubtitle}
-          </p>
-          <form className="mt-4 space-y-4">
-            <Field label={t.forms.email} name="waitlist-email" type="email" />
-            <div className="space-y-2 text-xs text-zinc-300">
-              <p className="font-medium text-zinc-200">
-                {t.forms.interestLabel}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Tag>{t.forms.interestCompany}</Tag>
-                <Tag>{t.forms.interestEngineer}</Tag>
-              </div>
-            </div>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-xs font-medium text-zinc-100 backdrop-blur transition hover:border-white/40 hover:bg-white/10"
-            >
-              {t.forms.submitWaitlist}
-            </button>
-            <p className="mt-2 text-[11px] text-zinc-500">
-              By joining, you agree that we can contact you about early access
-              and product updates.
-            </p>
-          </form>
-        </div>
+        <p className="text-xs text-zinc-500">
+          {lang === "en"
+            ? "Join our waiting list soon to experiment with Markubes in your infrastructure."
+            : "Únete pronto a nuestra waiting list para experimentar con Markubes en tu infraestructura."}
+        </p>
       </div>
     </section>
-  );
-}
-
-type FieldProps = {
-  label: string;
-  name: string;
-  type?: string;
-};
-
-function Field({ label, name, type = "text" }: FieldProps) {
-  return (
-    <label className="flex flex-col gap-1 text-xs text-zinc-300">
-      <span>{label}</span>
-      <input
-        name={name}
-        type={type}
-        className="rounded-xl border border-white/10 bg-black/40 px-3 py-2 text-sm text-white placeholder:text-zinc-500 focus:border-white/40 focus:outline-none focus:ring-0"
-        placeholder=""
-      />
-    </label>
-  );
-}
-
-function FieldTextarea({ label, name }: { label: string; name: string }) {
-  return (
-    <label className="flex flex-col gap-1 text-xs text-zinc-300">
-      <span>{label}</span>
-      <textarea
-        name={name}
-        rows={4}
-        className="resize-none rounded-xl border border-white/10 bg-black/40 px-3 py-2 text-sm text-white placeholder:text-zinc-500 focus:border-white/40 focus:outline-none focus:ring-0"
-      />
-    </label>
-  );
-}
-
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium text-zinc-100">
-      {children}
-    </span>
   );
 }
 
