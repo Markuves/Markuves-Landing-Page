@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 import logo from "@/assets/blackmarkubes-improve.png";
 import { useLanguage } from "../language-context";
 import { getTranslations } from "../i18n";
@@ -58,6 +59,7 @@ export function Header() {
 export function Hero() {
   const { lang } = useLanguage();
   const t = getTranslations(lang);
+  const [showWaitlistNotice, setShowWaitlistNotice] = useState(false);
 
   return (
     <section className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-10 md:px-8 md:flex-row md:items-center md:pt-16">
@@ -78,12 +80,13 @@ export function Hero() {
           >
             {t.hero.primaryCta}
           </a>
-          <a
-            href="#waitlist"
+          <button
+            type="button"
+            onClick={() => setShowWaitlistNotice(true)}
             className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-2.5 text-sm font-medium text-zinc-100 backdrop-blur transition hover:border-white/40 hover:bg-white/10"
           >
             {t.hero.secondaryCta}
-          </a>
+          </button>
         </div>
         <p className="max-w-md text-xs text-zinc-500">
           {t.hero.secondaryCaption}
@@ -97,6 +100,39 @@ export function Hero() {
           towards more efficient, greener configurations.
         </p>
       </div>
+      {showWaitlistNotice && (
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/60 px-4">
+          <div className="max-w-sm rounded-2xl border border-white/10 bg-zinc-950 p-5 shadow-xl">
+            <h3 className="text-sm font-semibold text-white">
+              {lang === "en"
+                ? "Private waiting list coming soon"
+                : "Waiting list privada muy pronto"}
+            </h3>
+            <p className="mt-2 text-xs text-zinc-300">
+              {lang === "en"
+                ? "We are not accepting sign-ups yet. In the meantime, follow us on LinkedIn to know when the private waiting list opens."
+                : "Todavía no estamos aceptando registros. Mientras tanto, síguenos en LinkedIn para enterarte cuando abramos la waiting list privada."}
+            </p>
+            <div className="mt-4 flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setShowWaitlistNotice(false)}
+                className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-medium text-zinc-200 hover:border-white/40 hover:bg-white/5"
+              >
+                {lang === "en" ? "Close" : "Cerrar"}
+              </button>
+              <a
+                href="https://www.linkedin.com/company/markuves/"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-black shadow-lg shadow-sky-500/20 hover:bg-zinc-100"
+              >
+                {t.footer.linkedin}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
