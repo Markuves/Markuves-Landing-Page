@@ -23,7 +23,7 @@ export function Header() {
           <div className="relative h-8 w-28">
             <Image
               src={logo}
-              alt="Markuves logo"
+              alt="Markubes logo"
               fill
               className="object-contain"
               priority
@@ -387,7 +387,7 @@ export function Footer() {
           >
             {t.footer.github}
           </a>
-          <span className="text-zinc-500">© {new Date().getFullYear()} Markuves</span>
+          <span className="text-zinc-500">© {new Date().getFullYear()} Markubes</span>
         </div>
       </div>
     </footer>

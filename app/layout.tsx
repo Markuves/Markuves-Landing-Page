@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { translations } from "./i18n";
 import { LanguageProvider } from "./language-context";
@@ -32,6 +33,7 @@ export default function RootLayout({
         <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black">
           <LanguageProvider>{children}</LanguageProvider>
         </div>
+        <Analytics />
       </body>
     </html>
   );

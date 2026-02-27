@@ -3,7 +3,7 @@ export type Language = "en" | "es";
 export const translations = {
   en: {
     meta: {
-      title: "Markuves — Data Driven Software Infrastructure",
+      title: "Markubes — Data Driven Software Infrastructure",
       description:
         "Latam-born company building self-adjusting, data-driven software infrastructure to eliminate digital waste and optimize performance at scale.",
     },
@@ -20,7 +20,7 @@ export const translations = {
         "We build self-adjusting software ecosystems powered by real-time data, eliminating digital waste and optimizing performance at scale.",
       primaryCta: "Talk to us",
       secondaryCta: "Join the waitlist",
-      secondaryCaption: "For enterprises and engineers who want to try Markuves.",
+      secondaryCaption: "For enterprises and engineers who want to try Markubes.",
     },
     markov: {
       title: "Self-adjusting systems, powered by probabilities",
@@ -34,7 +34,7 @@ export const translations = {
     },
     product: {
       title: "Kubernetes optimization, out of the box",
-      k8sTitle: "Markuves for Kubernetes",
+      k8sTitle: "Markubes for Kubernetes",
       k8sBody:
         "A data-driven optimization layer that sits on top of your existing Kubernetes clusters.",
       bullets: [
@@ -70,7 +70,7 @@ export const translations = {
         "Share a bit about your context and we will get back to you.",
       waitlistTitle: "Join the waitlist",
       waitlistSubtitle:
-        "Be the first to try Markuves and help shape the product.",
+        "Be the first to try Markubes and help shape the product.",
       name: "Name",
       email: "Work email",
       company: "Company",
@@ -93,7 +93,7 @@ export const translations = {
   },
   es: {
     meta: {
-      title: "Markuves — Data Driven Software Infrastructure",
+      title: "Markubes — Data Driven Software Infrastructure",
       description:
         "Empresa nacida en Latam construyendo infraestructura de software autoajustable, impulsada por datos, para eliminar el desperdicio digital y optimizar el rendimiento a escala.",
     },
@@ -110,7 +110,7 @@ export const translations = {
         "Construimos ecosistemas de software autoajustables impulsados por datos en tiempo real, eliminando desperdicio digital y optimizando el rendimiento a escala.",
       primaryCta: "Hablar con nosotros",
       secondaryCta: "Unirse a la waitlist",
-      secondaryCaption: "Para empresas e ingenieros que quieren probar Markuves.",
+      secondaryCaption: "Para empresas e ingenieros que quieren probar Markubes.",
     },
     markov: {
       title: "Sistemas autoajustables, guiados por probabilidades",
@@ -124,7 +124,7 @@ export const translations = {
     },
     product: {
       title: "Optimización de Kubernetes lista para usar",
-      k8sTitle: "Markuves para Kubernetes",
+      k8sTitle: "Markubes para Kubernetes",
       k8sBody:
         "Una capa de optimización basada en datos que se monta sobre tus clusters de Kubernetes existentes.",
       bullets: [
@@ -160,7 +160,7 @@ export const translations = {
         "Cuéntanos un poco de tu contexto y nos pondremos en contacto.",
       waitlistTitle: "Únete a la waitlist",
       waitlistSubtitle:
-        "Sé de los primeros en probar Markuves y ayudar a definir el producto.",
+        "Sé de los primeros en probar Markubes y ayudar a definir el producto.",
       name: "Nombre",
       email: "Email laboral",
       company: "Empresa",
